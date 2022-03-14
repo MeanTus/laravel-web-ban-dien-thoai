@@ -19,7 +19,8 @@ use App\Http\Controllers\HomeController;
 // Route::get('/trang-chu','HomeController@index');
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/trang-chu','App\Http\Controllers\HomeController@index');
+Route::get('/trang-chu', 'App\Http\Controllers\HomeController@index');
 ///admin
 Route::get('/', [AdminController::class, 'index']);
-Route::get('/admin','App\Http\Controllers\AdminController@index');
+Route::get('/admin', 'App\Http\Controllers\AdminController@index');
+Route::get('/dashboard', 'App\Http\Controllers\AdminController@show_dashboard');
