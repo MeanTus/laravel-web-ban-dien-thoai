@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use DB;
 use Session;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Http\Request;
 
-class BrandProduct extends Controller
+session_start();
+
+class ProductController extends Controller
 {
     public function AuthLogin()
     {
@@ -19,15 +21,14 @@ class BrandProduct extends Controller
         }
     }
 
-    public function add_brand_product()
+    public function add_product()
     {
         $this->AuthLogin();
-        return view('admin.add_brand_product');
+        return view('admin.add_product');
     }
 
-    public function all_brand_product()
+    public function all_product()
     {
-
         $this->AuthLogin();
         $all_brand_product = DB::table('tbl_brand')->paginate(2);
         $manager_brand_product  = view('admin.all_brand_product')->with('all_brand_product', $all_brand_product);
